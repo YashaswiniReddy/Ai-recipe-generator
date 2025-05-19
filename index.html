@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Suggestion App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get a Recipe Based on Your Ingredients</h1>
+    <form method="POST">
+        <label for="ingredients">Enter your ingredients (comma separated):</label><br>
+        <input type="text" name="ingredients" id="ingredients" placeholder="e.g., chicken, pasta, garlic" required>
+        <br>
+        <button type="submit">Get Recipe</button>
+    </form>
+
+    {% if recipe %}
+        <div class="result">
+            <h3>Suggested Recipe:</h3>
+            <p>{{ recipe }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
